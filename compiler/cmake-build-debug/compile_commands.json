@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -g -std=gnu++20 -fdiagnostics-color=always -o CMakeFiles\\main.dir\\main.cpp.obj -c C:\\Users\\barre\\Downloads\\logisim_computer-main\\logisim_computer-main\\compiler\\main.cpp",
+  "file": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/main.cpp",
+  "output": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/cmake-build-debug/CMakeFiles/main.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -g -std=gnu++20 -fdiagnostics-color=always -o CMakeFiles\\main.dir\\lexer.cpp.obj -c C:\\Users\\barre\\Downloads\\logisim_computer-main\\logisim_computer-main\\compiler\\lexer.cpp",
+  "file": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/lexer.cpp",
+  "output": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/cmake-build-debug/CMakeFiles/main.dir/lexer.cpp.obj"
+},
+{
+  "directory": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -g -std=gnu++20 -fdiagnostics-color=always -o CMakeFiles\\main.dir\\parser.cpp.obj -c C:\\Users\\barre\\Downloads\\logisim_computer-main\\logisim_computer-main\\compiler\\parser.cpp",
+  "file": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/parser.cpp",
+  "output": "C:/Users/barre/Downloads/logisim_computer-main/logisim_computer-main/compiler/cmake-build-debug/CMakeFiles/main.dir/parser.cpp.obj"
+}
+]
