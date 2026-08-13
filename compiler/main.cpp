@@ -1,34 +1,37 @@
 #include <iostream>
 #include "lexer.h"
+#include "parser.h"
 #include <map>
 
 void printTokens(std::vector<Token> tokens) {
-    std::map<Type, std::string> typeToString = {
-        {Type::LETTER, "LETTER"},
-        {Type::STRING, "STRING"},
-        {Type::SYMBOL, "SYMBOL"},
-        {Type::NUMBER, "NUMBER"},
-        {Type::KEYWORD, "KEYWORD"},
-        {Type::IDENTIFIER, "IDENTIFIER"},
-        {Type::SEMICOLON, "SEMICOLON"},
-        {Type::LPARANTHESIS, "LPARANTHESIS"},
-        {Type::RPARANTHESIS, "RPARANTHESIS"},
-        {Type::INVALID, "INVALID"},
-        {Type::END, "END"},
-        {Type::EMPTY, "EMPTY"},
-        {Type::FUNCTION, "FUNCTION"},
-        {Type::LCURLYBRACKET, "LCURLYBRACKET"},
-        {Type::RCURLYBRACKET, "RCURLYBRACKET"}
+    std::map<tokenType, std::string> typeToString = {
+        {tokenType::LETTER, "LETTER"},
+        {tokenType::STRING, "STRING"},
+        {tokenType::SYMBOL, "SYMBOL"},
+        {tokenType::NUMBER, "NUMBER"},
+        {tokenType::KEYWORD, "KEYWORD"},
+        {tokenType::IDENTIFIER, "IDENTIFIER"},
+        {tokenType::DATATYPE, "DATATYPE"},
+        {tokenType::SEMICOLON, "SEMICOLON"},
+        {tokenType::LPARANTHESIS, "LPARANTHESIS"},
+        {tokenType::RPARANTHESIS, "RPARANTHESIS"},
+        {tokenType::COMMA, "COMMA"},
+        {tokenType::INVALID, "INVALID"},
+        {tokenType::END, "END"},
+        {tokenType::EMPTY, "EMPTY"},
+        {tokenType::FUNCTION, "FUNCTION"},
+        {tokenType::LCURLYBRACKET, "LCURLYBRACKET"},
+        {tokenType::RCURLYBRACKET, "RCURLYBRACKET"}
     };
 
     for (int i = 0; i < tokens.size(); i++) {
         std::cout << "Token #" << (i + 1) << ": " << tokens[i].lexeme << "\t\t\t" << "type: " << typeToString[tokens[i].type] << "\n";
-
     }
 }
 
 int main() {
     std::vector<Token> tokens;
+    std::unique_ptr<ASTNode> parsedTokens;
 
     file f("test.txt");
 
@@ -41,6 +44,12 @@ int main() {
 
 
     printTokens(tokens);
+
+    std::cout << "\n\nParsed tokens: \n\n";
+
+    parsedTokens = Parser::parse(tokens);
+
+    Parser::printAST(*parsedTokens, 0);
 
     return 0;
 }
