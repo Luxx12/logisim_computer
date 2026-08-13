@@ -1,7 +1,6 @@
 #pragma once
-#include <variant>
+
 #include <fstream>
-#include <iostream>
 #include <vector>
 #include <cctype>
 
@@ -25,6 +24,7 @@ enum class tokenType {
     RPARANTHESIS,
     LCURLYBRACKET,
     RCURLYBRACKET,
+    COMMA,
     INVALID,
     END,
     EMPTY
