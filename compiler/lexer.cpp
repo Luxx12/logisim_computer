@@ -5,7 +5,7 @@ void letterStateCheck(Token& t){
         || t.lexeme == "return") {
         t.type = tokenType::KEYWORD;
     }
-    else if (t.lexeme == "int" || t.lexeme == "double" || t.lexeme == "char") {
+    else if (t.lexeme == "int" || t.lexeme == "double" || t.lexeme == "char" || t.lexeme == "void") {
         t.type = tokenType::DATATYPE;
     }
     else {
@@ -219,7 +219,21 @@ void letterStateCheck(Token& t){
                     curToken = {tokenType::RCURLYBRACKET, "}"};
                 }
             }
+            // check for commas
+            else if (ch == ',') {
+                if (curToken.type == tokenType::EMPTY) {
+                    curToken.type = tokenType::COMMA;
+                    curToken.lexeme += ch;
+                }
+                else {
+                    // check to see if current token type equal to letter but actually end up being a keyword or identifer
+                    if (curToken.type == tokenType::LETTER) letterStateCheck(curToken);
 
+                    tokens.push_back(curToken);
+
+                    curToken = {tokenType::COMMA, ","};
+                }
+            }
             // check for string literals, if current token state is a string literal then it will continously append char
             // until the delimiter is found
             else if (ch == '\"') {
